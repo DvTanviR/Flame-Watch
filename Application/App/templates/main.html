@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load social_share %}
+{% block title %}Globe - FlameWatch{% endblock %}
+{% block content %}
+<div class="main-conatiner flex-row space_around">
+            <div class="main-left">
+                <div class="input-group" id="searchBox">
+                    <input type="text" class="form-control" placeholder="GoTo" id="searchText"/>
+                    <span class="input-group-btn">
+                        <button id="searchButton" class="btn btn-primary" type="button">
+                            <span class="glyphicon glyphicon-search">Search</span>
+                        </button>
+                    </span>
+                </div>
+                <div class="prediction">
+                    <div class="toggle flex-row space_between" onclick="togglePrediction(this)">
+                        <p>Prediction</p>
+                        <i class="fa-solid fa-angle-left faq-icon"></i>
+                    </div>
+                    <div class="toggle-show">
+                        <div class="prediction-img-wrapper">
+                            <div class="predict-img">
+                                <h1>No results</h1>
+                            </div>
+                            <div class="share-predict">
+                                <ul class="flex-row space_around">
+                                    <li>{% post_to_facebook object_or_url %}<i class="fa-brands fa-facebook"></i></li>
+                                    <li>{% post_to_twitter "Check out this wildfire prediction from FlameWatch!" object_or_url %}<i class="fa-brands fa-twitter"></i></li>
+                                    <li>{% post_to_whatsapp object_or_url %}<i class="fa-brands fa-whatsapp"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prediction">
+                    <div class="toggle flex-row space_between" onclick="togglePrediction(this)">
+                        <p>Contact</p>
+                        <i class="fa-solid fa-angle-left faq-icon"></i>
+                    </div>
+                    <div class="toggle-show">
+                        <div class="email-number-box flex-row space_between">
+                            <div>
+                                <p>Email: info@flamewatch.earth</p>
+                            </div>
+                            <div>
+                                <p>Number: +880 01975204028</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prediction">
+                    <div class="toggle flex-row space_between" onclick="togglePrediction(this)">
+                        <p>Subscribe</p>
+                        <i class="fa-solid fa-angle-left faq-icon"></i>
+                    </div>
+                    <div class="toggle-show">
+                        <div class="subscribe">
+                            {% if messages %}
+                            <div class="messages">
+                                {% for message in messages %}
+                                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                                    {{ message }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <form method="POST" action="{% url 'main' %}">
+                                {% csrf_token %}
+                                {{ form.email }}
+                                {{ form.phone_number }}
+                                {{ form.location }}
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+            <div class="main-map">
+                <canvas id="canvasOne">
+                    Your browser does not support HTML5 Canvas.
+                </canvas>
+            </div>
+</div>
+
+{% endblock %}

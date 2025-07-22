@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About - FlameWatch{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/about.css' %}">
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>About FlameWatch</h1>
+        <p class="tagline">Predicting Wildfires. Protecting Life.</p>
+        <p class="description">
+          FlameWatch uses AI and satellite data to deliver real-time wildfire risk assessments — helping communities
+          act before disaster strikes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="mission">
+      <div class="container">
+        <h2>Our Mission</h2>
+        <div class="mission-content">
+          <div class="mission-text">
+            <p>
+              We aim to reduce the devastating impact of wildfires by turning cutting-edge space data into early
+              warnings. Our team of dedicated researchers and engineers works tirelessly to develop technology that
+              can predict wildfire risks before they become catastrophic events.
+            </p>
+            <p>
+              By combining satellite imagery, environmental data, and advanced AI algorithms, we provide actionable
+              insights that help communities prepare and respond to potential wildfire threats.
+            </p>
+          </div>
+          <div class="mission-image">
+            <div class="flame-icon">
+              <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How FlameWatch Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How FlameWatch Works</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card-content">
+              <i class="fa-solid fa-satellite"></i>
+              <h3>Satellite Data</h3>
+              <p>
+                We collect and analyze data from NASA FIRMS, POWER, and WMS satellites to monitor environmental
+                conditions in real-time.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <i class="fa-solid fa-brain"></i>
+              <h3>AI Prediction</h3>
+              <p>
+                Our Random Forest algorithm is trained on historical and environmental data to predict wildfire
+                risks with high accuracy.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <i class="fa-solid fa-tower-broadcast"></i>
+              <h3>Real-Time Insights</h3>
+              <p>
+                Our interactive frontend provides live updates and actionable insights to help communities respond
+                quickly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why It Matters -->
+    <section class="why-it-matters">
+      <div class="container">
+        <h2>Why It Matters</h2>
+        <div class="grid">
+          <div class="grid-item">
+            <h3>Increasing Wildfire Threats</h3>
+            <p>
+              Climate change has led to more frequent and severe wildfires around the world. The need for early
+              detection and prevention has never been more critical.
+            </p>
+          </div>
+          <div class="grid-item">
+            <h3>Need for Early Intervention</h3>
+            <p>
+              Early warning systems can significantly reduce the impact of wildfires, saving lives, protecting
+              property, and preserving natural ecosystems.
+            </p>
+          </div>
+          <div class="grid-item full-width">
+            <h3>Real-World Impact</h3>
+            <p>
+              FlameWatch is ready for real-world deployment. Once we receive the required permissions, it can be used directly to predict wildfires and help protect communities and ecosystems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="who-we-are">
+      <div class="container">
+        <h2>Who We Are</h2>
+        <p class="team-intro">
+          Built by wildfire researchers, AI engineers, and developers passionate about climate resilience. Our diverse
+          team combines expertise in environmental science, machine learning, and software development to create
+          innovative solutions for wildfire prediction.
+        </p>
+        <div class="team-grid">
+          <!-- Team member placeholders - replace with actual team info -->
+          <div class="team-member">
+            <div class="member-avatar">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Tanvir Nishat</h3>
+            <p>Backend Developer</p>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Md. Sahidullah</h3>
+            <p>ML & Data Scientist</p>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Rayhan Islam</h3>
+            <p>Data Researcher</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Involved / Contact -->
+    <section class="get-involved">
+      <div class="container">
+        <h2>Get Involved</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>
+              We're always looking for collaborators, partners, and organizations interested in integrating our API or
+              receiving alerts. Reach out to learn more about how we can work together to protect communities from
+              wildfire threats.
+            </p>
+            <div class="email">
+              <i class="fa-solid fa-envelope"></i>
+              <span>info@flamewatch.earth</span>
+            </div>
+            <div class="buttons">
+              <button class="btn primary">Contact Us</button>
+              <button class="btn secondary" style="color: white !important;">Join Our Newsletter</button>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn primary full-width">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h2><i class="fa-solid fa-fire-flame-curved"></i> FlameWatch</h2>
+            <p>Predicting Wildfires. Protecting Life.</p>
+          </div>
+          <nav class="footer-nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FlameWatch. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+{% endblock %}

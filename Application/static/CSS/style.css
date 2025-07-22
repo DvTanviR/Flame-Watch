@@ -1,0 +1,368 @@
+/* ---------------- Flame-Themed Color Palette ---------------- */
+:root {
+    /* Primary Colors */
+    --background-color: #0f0f1e; /* Deep dark blue-black like night sky */
+    --button-color: #ff5722; /* Vibrant flame orange for buttons */
+    --box-color: rgba(59, 31, 43, 0.7); /* Dark burgundy with transparency for UI elements */
+    --text-color: #fff5f0; /* Warm white for text */
+    --secondary-text-color: #ffd2b5; /* Light peach for secondary text */
+    
+    /* Flame Accent Colors */
+    --flame-red: #ff3d00; /* Intense red for hot spots and warnings */
+    --flame-orange: #ff9500; /* Bright orange for primary accents */
+    --flame-yellow: #ffca28; /* Yellow for highlights and indicators */
+    --flame-amber: #ffab00; /* Amber for secondary accents */
+    
+    /* Gradient Colors */
+    --ember-dark: #7f1d1d; /* Dark ember red for depth */
+    --ember-glow: #ff6e40; /* Glowing ember orange */
+    --ash-gray: #424242; /* Dark ash gray for inactive elements */
+    --smoke-light: #78909c; /* Light smoke blue-gray */
+    
+    /* Functional Colors */
+    --danger-red: #d50000; /* Critical alert red */
+    --warning-orange: #ff6d00; /* Warning indicator */
+    --success-green: #00c853; /* Success indicator */
+    --info-blue: #00b0ff; /* Information indicator */
+}
+
+/* Full CSS with flame-themed enhancements */
+html,
+body {
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    height: 100vh;
+    overflow: hidden;
+    /* Subtle gradient background resembling night sky with distant fire glow */
+    background: radial-gradient(ellipse at bottom, #000000 0%, #07052e 100%);
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+button {
+    background: var(--button-color);
+    border: none;
+    border-radius: 0.75rem;
+    padding: 1.10rem;
+    width: 15%;
+    cursor: pointer;
+    color: var(--text-color);
+    /* Flame gradient for buttons */
+    background: linear-gradient(to right, var(--flame-red), var(--flame-orange));
+    box-shadow: 0 2px 10px rgba(255, 61, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 61, 0, 0.5);
+    background: linear-gradient(to right, var(--flame-orange), var(--flame-red));
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container {
+    padding: 10% 5%;
+}
+
+.container:first-child {
+    padding: 1% 5%;
+}
+
+.space_around {
+    justify-content: space-around;
+}
+
+.space_between {
+    justify-content: space-between;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar-container {
+    width: 20%;
+    height: fit-content;
+    background-color: var(--box-color);
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.75rem;
+    padding: 7px;
+    /* Add ember glow to navbar */
+    box-shadow: 0 0 15px rgba(255, 110, 64, 0.2);
+}
+
+.navbar-container ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-container ul li {
+    width: 25%;
+    text-align: center;
+}
+
+.navbar-container ul li i {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.navbar-container ul li:hover i {
+    color: var(--flame-yellow);
+}
+
+/* ---------------- Input ---------------- */
+input {
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+    background-color: var(--box-color);
+    color: var(--text-color);
+    border: 1px solid var(--box-color);
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--flame-orange);
+    box-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
+}
+
+input::placeholder {
+    color: var(--secondary-text-color);
+    font-style: italic;
+    opacity: 1;
+}
+
+/* ---------------- ScrollBar ---------------- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--box-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ember-dark);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--flame-orange);
+}
+
+/* ---------------- Toggle ---------------- */
+.toggle i {
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+    width: 1rem;
+    height: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: var(--flame-yellow);
+}
+
+.toggle-roted {
+    transform: rotate(90deg) !important;
+}
+
+.toggle-show {
+    display: none;
+    margin-top: 10px;
+}
+
+.toggle {
+    cursor: pointer;
+    background-color: var(--box-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.toggle:hover {
+    background-color: var(--ember-dark);
+    box-shadow: 0 0 10px rgba(255, 110, 64, 0.3);
+}
+
+/* ======================= MainPage ======================= */
+.main-left, .main-map {
+    width: 48%;
+}
+
+/* ---------------- Right Side Canvas ---------------- */
+#canvasOne {
+    width: 100%;
+    max-width: 700px;
+    height: 100vh;
+    border-radius: 1rem;
+    /* Add flame glow to Earth visualization */
+}
+
+/* ---------------- Left Side All ---------------- */
+.main-left {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.prediction {
+    width: 95%;
+}
+
+.input-group input {
+    width: 75%;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.predict-img {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.predict-img img {
+    width: 100%;
+    /* Add subtle warm filter to images */
+    filter: drop-shadow(0 0 5px rgba(255, 149, 0, 0.2));
+}
+
+.share-predict ul li {
+    margin: 1rem;
+    position: relative;
+}
+
+.share-predict ul {
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.share-predict ul li a {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.share-predict ul li i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.share-predict ul li:hover i.fa-facebook {
+    color: #1877f2;
+}
+
+.share-predict ul li:hover i.fa-twitter {
+    color: #1da1f2;
+}
+
+.share-predict ul li:hover i.fa-whatsapp {
+    color: #25d366;
+}
+
+.share-predict ul li i {
+    transition: color 0.3s ease;
+}
+
+.share-predict ul li:hover i {
+    color: var(--flame-orange);
+}
+
+.email-number-box div {
+    width: 40%;
+    background-color: var(--box-color);
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.email-number-box div:hover {
+    background-color: var(--ember-dark);
+    box-shadow: 0 0 15px rgba(255, 110, 64, 0.2);
+}
+
+.subscribe input {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.subscribe input:last-child {
+    width: 20%;
+    cursor: pointer;
+    background: linear-gradient(to right, var(--flame-red), var(--flame-orange));
+    color: var(--text-color);
+}
+
+.subscribe input:last-child:hover {
+    background: linear-gradient(to right, var(--flame-orange), var(--flame-red));
+}
+
+/* Flame-themed active states */
+.active {
+    color: var(--flame-yellow) !important;
+    text-shadow: 0 0 10px rgba(255, 202, 40, 0.5);
+}
+
+/* Flame animation for important elements */
+@keyframes flicker {
+    0% { box-shadow: 0 0 5px rgba(255, 149, 0, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(255, 149, 0, 0.5); }
+    100% { box-shadow: 0 0 5px rgba(255, 149, 0, 0.3); }
+}
+
+.highlight-flame {
+    animation: flicker 3s infinite;
+}
+
+/* Warning indicators */
+.warning-indicator {
+    color: var(--warning-orange);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.warning-indicator:before {
+    content: "⚠️";
+    margin-right: 5px;
+}
+
+/* Critical alert styling */
+.critical-alert {
+    background-color: var(--danger-red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0;
+    animation: flicker 1.5s infinite;
+}
