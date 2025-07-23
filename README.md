@@ -69,8 +69,8 @@ Model/
 
 2. **Clone the repository**
    ```powershell
-   git clone https://github.com/your-username/FlameWatch-OpenML.git
-   cd FlameWatch-OpenML/Application
+   git clone https://github.com/DvTanviR/Flame-Watch.git
+   cd Flame-Watch/Application
    ```
 
 3. **(Optional but recommended) Create a virtual environment**
@@ -103,8 +103,7 @@ Model/
 1. **Clone the repository**
    ```powershell
    git clone https://github.com/DvTanviR/Flame-Watch.git
-   cd Flame-Watch
-   cd Model
+   cd Flame-Watch/Model
    ```
 
 2. **Create a Python virtual environment (recommended)**
@@ -161,12 +160,12 @@ These metrics indicate the model's strong capability in correctly predicting wil
 
 ## Features
 
-🔥 **Wildfire risk prediction:** Predicts fire occurrence based on climate variables like temperature, humidity, wind speed, and satellite thermal hotspot data.
-🌎 **NASA data integration:** Uses publicly available NASA FIRMS and POWER datasets.
-🧠 **Random Forest classifier:** Proven machine learning algorithm providing high accuracy and interpretability.
-🧪 **Balanced dataset training:** Trained with both fire and no-fire data to reduce false positives.
-📊 **Performance metrics:** Achieves over 90% accuracy, precision, and recall in validation tests.
-🧾 **MIT licensed:** Free for commercial and non-commercial use.
+- **Wildfire risk prediction:** Predicts fire occurrence based on climate variables like temperature, humidity, wind speed, and satellite thermal hotspot data.
+- **NASA data integration:** Uses publicly available NASA FIRMS and POWER datasets.
+- **Random Forest classifier:** Proven machine learning algorithm providing high accuracy and interpretability.
+- **Balanced dataset training:** Trained with both fire and no-fire data to reduce false positives.
+- **Performance metrics:** Achieves over 90% accuracy, precision, and recall in validation tests.
+- **MIT licensed:** Free for commercial and non-commercial use.
 
 ## Learn More
 
